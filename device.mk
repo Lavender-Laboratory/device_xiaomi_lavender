@@ -27,6 +27,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio@2.1-impl:32 \
     audio.primary.sdm660 \
     audio.r_submix.default \
     audio.usb.default \
