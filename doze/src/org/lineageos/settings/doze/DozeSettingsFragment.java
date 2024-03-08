@@ -31,19 +31,19 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompatCompatCompat;
 
-import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.MainSwitchPreferenceCompatCompatCompat;
 
 public class DozeSettingsFragment extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener, OnCheckedChangeListener {
 
-    private MainSwitchPreference mSwitchBar;
+    private MainSwitchPreferenceCompatCompatCompat mSwitchBar;
 
-    private SwitchPreference mWakeOnGesturePreference;
-    private SwitchPreference mPickUpPreference;
-    private SwitchPreference mHandwavePreference;
-    private SwitchPreference mPocketPreference;
+    private SwitchPreferenceCompatCompatCompat mWakeOnGesturePreference;
+    private SwitchPreferenceCompatCompatCompat mPickUpPreference;
+    private SwitchPreferenceCompatCompatCompat mHandwavePreference;
+    private SwitchPreferenceCompatCompatCompat mPocketPreference;
 
     private Handler mHandler = new Handler();
 
@@ -59,26 +59,26 @@ public class DozeSettingsFragment extends PreferenceFragment implements
 
         boolean dozeEnabled = Utils.isDozeEnabled(getActivity());
 
-        mSwitchBar = (MainSwitchPreference) findPreference(Utils.DOZE_ENABLE);
+        mSwitchBar = (MainSwitchPreferenceCompatCompatCompat) findPreference(Utils.DOZE_ENABLE);
         mSwitchBar.addOnSwitchChangeListener(this);
         mSwitchBar.setChecked(dozeEnabled);
 
-        mWakeOnGesturePreference = (SwitchPreference) findPreference(Utils.WAKE_ON_GESTURE_KEY);
+        mWakeOnGesturePreference = (SwitchPreferenceCompatCompatCompat) findPreference(Utils.WAKE_ON_GESTURE_KEY);
         mWakeOnGesturePreference.setEnabled(dozeEnabled);
         mWakeOnGesturePreference.setOnPreferenceChangeListener(this);
 
         PreferenceCategory proximitySensorCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(Utils.CATEG_PROX_SENSOR);
 
-        mPickUpPreference = (SwitchPreference) findPreference(Utils.GESTURE_PICK_UP_KEY);
+        mPickUpPreference = (SwitchPreferenceCompatCompatCompat) findPreference(Utils.GESTURE_PICK_UP_KEY);
         mPickUpPreference.setEnabled(dozeEnabled);
         mPickUpPreference.setOnPreferenceChangeListener(this);
 
-        mHandwavePreference = (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
+        mHandwavePreference = (SwitchPreferenceCompatCompatCompat) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
         mHandwavePreference.setEnabled(dozeEnabled);
         mHandwavePreference.setOnPreferenceChangeListener(this);
 
-        mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
+        mPocketPreference = (SwitchPreferenceCompatCompatCompat) findPreference(Utils.GESTURE_POCKET_KEY);
         mPocketPreference.setEnabled(dozeEnabled);
         mPocketPreference.setOnPreferenceChangeListener(this);
 
