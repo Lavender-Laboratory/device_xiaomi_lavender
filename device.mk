@@ -434,6 +434,9 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.binary_xml=false
 
+# Signing keys
+$(call inherit-product, vendor/extra/product.mk)
+
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \
